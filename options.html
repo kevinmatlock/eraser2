@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <title>Page Eraser Options</title>
+
+        <script src="jquery-1.7.2.min.js"></script>
+        <script src="options.js"></script>
+
+        <style>
+            body {
+                font-family: arial, helvetica, san-serif;
+                font-size: 0.8em;
+                color: #333333;
+            }
+
+            h1, h2 {
+                border-bottom: solid 1px #EEEEEE;
+            }
+
+            label {
+                display: inline-block;
+                width: 180px;
+                margin-right: 10px;
+
+                text-align: right;
+            }
+
+            .field + * {
+                margin-top: 15px;
+            }
+
+            menu {
+                margin: 0;
+                padding: 10px 0;
+
+                border-top: solid 1px #EEEEEE;
+            }
+
+            input, select {
+                margin: 0;
+            }
+
+            table {
+                width: 100%;
+
+                border-collapse: collapse;
+            }
+
+            th, td {
+                padding: 0.5em;
+
+                font-size: 0.8em;
+                vertical-align: top;
+                text-align: left;
+            }
+
+            tr + tr td {
+                border-top: solid 1px #EEEEEE;
+            }
+
+            thead {
+                background: #EEEEEE;
+            }
+
+            table .check {
+                text-align: center;
+            }
+
+            .message {
+                color: #336699;
+                font-weight: bold;
+            }
+
+            a, a:link, a:hover, a:visited {
+                color: #336699;
+            }
+
+            .incognito {
+                color: #CCCCCC;
+            }
+
+            .incognito a {
+                padding-left: 20px;
+
+                background: url(incognito.png) center left no-repeat;
+                background-size: 16px 16px;
+                color: #CCCCCC;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h1><img src="icon24.png"> modified Page Eraser Options</h1>
+
+        <div class="field">
+            <label for="fadeSpeed">Erased Elements Should</label>
+            <select id="fadeSpeed">
+                <option value="200">Fade Out</option>
+                <option value="0">Hide Instantly</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="maintainStructure">Maintain Page Structure</label>
+            <input type="checkbox" id="maintainStructure" />
+        </div>
+
+        <div class="field">
+            <label for="customCursor">Use Custom Cursor</label>
+            <input type="checkbox" id="customCursor" checked="checked" />
+        </div>
+
+        <menu class="actions">
+            <button id="save">Save Settings</button>
+        </menu>
+
+        <h2>Erasers</h2>
+
+        <table id="eracings">
+            <thead>
+                <tr>
+                    <th class="check" width="3%"><input type="checkbox" id="select_all" title="Select all" /></th>
+                    <th width="70%">Site Address</th>
+                    <th width="20%">Last Modified</th>
+                    <th width="7%">Erasers</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <p id="no_erasers" class="message">There are currently no erasers</p>
+
+        <menu class="actions">
+            <button id="delete_selected">Remove Selected Erasers</button>
+            <button id="show_incognito">Show Incognito Erasers</button>
+            <button id="hide_incognito">Hide Incognito Erasers</button>
+        </menu>
+    </body>
+</html>
